@@ -2,11 +2,7 @@ class DSLModem
   require 'rubygems'
   require 'mechanize'
 
-  def initialize
-    url = 'http://192.168.1.1/index.stm?title=Status-Modem'
-    username = "admin"
-    password = "password"
-
+  def initialize(url='http://192.168.1.1/index.stm?title=Status-Modem', username, password)
     # Get the login page
     agent = Mechanize.new
     @page = agent.get(url)
